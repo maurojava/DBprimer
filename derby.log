@@ -1,0 +1,16 @@
+----------------------------------------------------------------
+Fri Nov 25 12:07:41 CET 2016:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.10.2.0 - (1582446): instance a816c00e-0158-9b2b-6154-0000005d28f8 
+on database directory /home/mauronew/NetBeansProjects/progetti_netbeans8.2/DBprimer/target/database/ImageDB with class loader sun.misc.Launcher$AppClassLoader@1ff563 
+Loaded from file:/home/mauronew/NetBeansProjects/progetti_netbeans8.2/projects_kay/LazyJPATest/contrib/derby-10.10.2.0/derby.jar
+java.vendor=Oracle Corporation
+java.runtime.version=1.7.0_25-b15
+user.dir=/home/mauronew/NetBeansProjects/progetti_netbeans8.2/DBprimer
+os.name=Linux
+os.arch=i386
+os.version=2.6.32-58-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
+----------------------------------------------------------------
+Fri Nov 25 12:07:45 CET 2016:
+Shutting down instance a816c00e-0158-9b2b-6154-0000005d28f8 on database directory /home/mauronew/NetBeansProjects/progetti_netbeans8.2/DBprimer/target/database/ImageDB with class loader sun.misc.Launcher$AppClassLoader@1ff563 

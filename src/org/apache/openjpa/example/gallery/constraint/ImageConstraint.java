@@ -21,8 +21,7 @@ package org.apache.openjpa.example.gallery.constraint;
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.Target;
-import static java.lang.annotation.ElementType.METHOD;
-import static java.lang.annotation.ElementType.FIELD;
+import static java.lang.annotation.ElementType.TYPE;
 import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 import javax.validation.Constraint;
@@ -33,14 +32,14 @@ import static org.apache.openjpa.example.gallery.ImageType.GIF;
 import static org.apache.openjpa.example.gallery.ImageType.JPEG;
 
 /**
- * Attribute-level annotation used to specify an image content constraint.  Uses 
- * ImageContentValidator to perform the validation.
+ * Type-level annotation used to specify an image constraint.  Uses 
+ * ImageValidator to perform the validation.
  */
 @Documented
-@Constraint(validatedBy = ImageContentValidator.class)
-@Target({ METHOD, FIELD })
+@Constraint(validatedBy = ImageValidator.class)
+@Target({ TYPE })
 @Retention(RUNTIME)
-public @interface ImageContent {
+public @interface ImageConstraint {
     String message() default "Image data is not a supported format.";
     Class<?>[] groups() default {};
     Class<? extends Payload>[] payload() default {};

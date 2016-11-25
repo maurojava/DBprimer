@@ -3,6 +3,7 @@
   <persistence-unit name="MyPu" transaction-type="RESOURCE_LOCAL">
     <provider>org.apache.openjpa.persistence.PersistenceProviderImpl</provider>
     <class>entity_for_validation.Customer</class>
+    
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:derby://localhost:1527/dbprimer"/>
       <property name="javax.persistence.jdbc.user" value="app"/>
@@ -11,4 +12,28 @@
       <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
     </properties>
   </persistence-unit>
+   <persistence-unit name="BeanValidation">
+        <description>Example persistence unit for Bean Validation</description>
+        <class>org.apache.openjpa.example.gallery.model.Album</class>
+        <class>org.apache.openjpa.example.gallery.model.Creator</class>
+        <class>org.apache.openjpa.example.gallery.model.Image</class>
+        <class>org.apache.openjpa.example.gallery.model.Location</class>
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+        <validation-mode>CALLBACK</validation-mode>
+        <properties>
+          <property name="openjpa.ConnectionDriverName" 
+              value="org.apache.derby.jdbc.EmbeddedDriver" />
+          <property name="openjpa.ConnectionURL"
+              value="jdbc:derby:target/database/ImageDB;create=true" />
+          <property name="openjpa.jdbc.SynchronizeMappings" value="buildSchema(ForeignKeys=true)"/>
+          <property name="openjpa.DynamicEnhancementAgent" value="false"/>
+                
+          <property name="javax.persistence.validation.group.pre-persist"
+              value="org.apache.openjpa.example.gallery.constraint.SequencedImageGroup"/>
+          <property name="javax.persistence.validation.group.pre-update"
+              value="org.apache.openjpa.example.gallery.constraint.SequencedImageGroup"/>
+          <property name="javax.persistence.validation.group.pre-remove"
+              value="javax.validation.groups.Default"/>
+        </properties>
+    </persistence-unit>
 </persistence>
